@@ -1,0 +1,39 @@
+﻿@page "/pay/{otc:guid}"
+@model WomWebDemo.Pages.PayShowModel
+@{
+    ViewData["Title"] = "Your demo payment";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <h1 class="display-5">Perform payment</h1>
+
+            <p class="lead">
+                Your first WOM&nbsp;payment has been requested successfully!
+            </p>
+
+            <p>
+                In order to perform the payment, please scan the QR&nbsp;Code below using the <b>WOM&nbsp;Pocket</b> application.
+                Use the <i>Password&nbsp;code</i> just below when the application asks for it.
+            </p>
+
+            <p class="text-center qrcode">
+                <a href="@Model.Link">
+                    <img src="https://@(Environment.GetEnvironmentVariable("WOM_DOMAIN"))/api/render/qrcode?url=@Model.Link" alt="Code" class="img-fluid" />
+                </a>
+
+                <h3 class="text-center">Password: @Model.Password</h3>
+            </p>
+
+            <p>If you're on a mobile device, tap the button below to automatically proceed to voucher collection.</p>
+
+            <p class="text-center">
+                <a class="btn btn-primary" href="wom://pay/@Model.Otc.ToString("N")" title="Perform payment using WOM Pocket">
+                    Perform payment
+                </a>
+            </p>
+
+        </div>
+    </div>
+</div>

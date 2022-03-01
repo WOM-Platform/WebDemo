@@ -1,0 +1,6 @@
+**/.vs/*
+**/bin/*
+**/obj/*
+*.csproj.user
+keys/*
+!keys/placeholder

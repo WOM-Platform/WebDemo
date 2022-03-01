@@ -1,0 +1,21 @@
+﻿@page "/confirm"
+@model WomWebDemo.Pages.PayConfirmationModel
+@{
+    ViewData["Title"] = "Demo payment";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <h1 class="display-5">Payment received</h1>
+
+            <p class="lead">
+                Payment successfully received!
+            </p>
+
+            <p>
+                Enjoy your discount of <b>@Model.Amount%</b> on <b>@Model.DiscountType</b>!
+            </p>
+        </div>
+    </div>
+</div>
