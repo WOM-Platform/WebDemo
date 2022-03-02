@@ -24,7 +24,7 @@ builder.Services.AddScoped<WomPlatform.Connector.PointOfSale>(provider =>
     var configuration = provider.GetRequiredService<IConfiguration>();
     var confDemo = configuration.GetRequiredSection("DemoCredentials");
     var confPos = confDemo.GetRequiredSection("Pos");
-    string keyPath = confSource["KeyPath"];
+    string keyPath = confPos["KeyPath"];
 
     using var keyStream = new FileStream(keyPath, FileMode.Open, FileAccess.Read);
 
