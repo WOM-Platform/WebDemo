@@ -15,7 +15,7 @@ namespace WomWebDemo.Pages
         {
             get
             {
-                return $"https://{Environment.GetEnvironmentVariable("WOM_DOMAIN")}/api/payment/{Otc:N}";
+                return $"https://{Environment.GetEnvironmentVariable("WOM_DOMAIN")}/payment/{Otc:N}";
             }
         }
 
