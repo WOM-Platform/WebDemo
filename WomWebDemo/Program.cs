@@ -17,7 +17,7 @@ builder.Services.AddScoped<WomPlatform.Connector.Instrument>(provider =>
     Console.WriteLine("Path {0} in directory {1} exists {2}", keyPath, Directory.GetParent(keyPath), Directory.Exists(Directory.GetParent(keyPath)));
     Console.WriteLine("Directory {0} contains {1}", Directory.GetParent(keyPath), string.Join(", ", Directory.GetFiles(Directory.GetParent(keyPath))));
 
-    using var keyStream = new FileStream(, FileMode.Open);
+    using var keyStream = new FileStream(keyPath, FileMode.Open, FileAccess.Read);
 
     var client = provider.GetRequiredService<WomPlatform.Connector.Client>();
     return client.CreateInstrument(confSource["Id"], keyStream);
@@ -32,7 +32,7 @@ builder.Services.AddScoped<WomPlatform.Connector.PointOfSale>(provider =>
     Console.WriteLine("Path {0} in directory {1} exists {2}", keyPath, Directory.GetParent(keyPath), Directory.Exists(Directory.GetParent(keyPath)));
     Console.WriteLine("Directory {0} contains {1}", Directory.GetParent(keyPath), string.Join(", ", Directory.GetFiles(Directory.GetParent(keyPath))));
 
-    using var keyStream = new FileStream(keyPath, FileMode.Open);
+    using var keyStream = new FileStream(keyPath, FileMode.Open, FileAccess.Read);
 
     var client = provider.GetRequiredService<WomPlatform.Connector.Client>();
     return client.CreatePos(confPos["Id"], keyStream);
