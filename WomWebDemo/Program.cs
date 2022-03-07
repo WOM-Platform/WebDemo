@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.DataProtection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
@@ -31,6 +33,8 @@ builder.Services.AddScoped<WomPlatform.Connector.PointOfSale>(provider =>
     var client = provider.GetRequiredService<WomPlatform.Connector.Client>();
     return client.CreatePos(confPos["Id"], keyStream);
 });
+builder.Services.AddDataProtection()
+    .PersistKeysToGoogleCloudStorage(Environment.GetEnvironmentVariable("GCLOUD_STORAGE_KEY_BUCKET"), "WebDemo-DataProtectionKeys.xml");
 
 var app = builder.Build();
 

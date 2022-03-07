@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WomPlatform.Connector" Version="4.3.1" />
+    <PackageReference Include="Google.Cloud.AspNetCore.DataProtection.Storage" Version="1.0.0-alpha03" />
+    <PackageReference Include="WomPlatform.Connector" Version="4.4.0" />
   </ItemGroup>
 
 </Project>

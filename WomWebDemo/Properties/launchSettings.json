@@ -14,7 +14,10 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "WOM_DOMAIN": "dev.wom.social",
-        "SELF_HOST": "localhost:5115"
+        "SELF_HOST": "localhost:5115",
+        "GOOGLE_PROJECT_ID": "wom-platform-308616",
+        "GOOGLE_APPLICATION_CREDENTIALS": "..\\keys\\wom-platform-308616-5ea929c132c6.json",
+        "GCLOUD_STORAGE_KEY_BUCKET": "wom-platform-308616-key-storage"
       },
       "applicationUrl": "http://localhost:5115",
       "dotnetRunMessages": true
